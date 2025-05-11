@@ -73,15 +73,14 @@ if [[ $- == *i* ]]; then
     echo "Jupyter server already up:"
     jupyter notebook list
   else
-    cat << 'EOF'
-echo "Starting Jupyter Notebook..."
-echo "--------------------------"
-echo
-jupyter notebook \
-  --NotebookApp.allow_origin='https://colab.research.google.com' \
-  --port=8888 \
-  --NotebookApp.port_retries=0 \
-  --no-browser &>/dev/null &
-EOF
+    echo "Starting Jupyter Notebook..."
+    echo "--------------------------"
+    echo
+    jupyter notebook \
+      --NotebookApp.allow_origin='https://colab.research.google.com' \
+      --port=8888 \
+      --NotebookApp.port_retries=0 \
+      --no-browser &>/dev/null &
+    jupyter notebook list
   fi
 fi
