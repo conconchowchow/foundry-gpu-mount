@@ -51,35 +51,37 @@ fi
 # -----------------------------
 # Additional Python Packages for HF + Colab Local Runtime
 # -----------------------------
-# uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-# uv pip install transformers datasets accelerate evaluate
-# uv pip install jupyterlab ipywidgets jupyter_http_over_ws
+uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+uv pip install transformers datasets accelerate evaluate
+uv pip install jupyterlab ipywidgets jupyter_http_over_ws
 
 # # -----------------------------
 # # Enable Jupyter extension for Colab
 # # -----------------------------
-# jupyter serverextension enable --py jupyter_http_over_ws
+jupyter server extension enable --py jupyter_http_over_ws
 
 # # -----------------------------
 # # Optional: Set environment variable
 # # -----------------------------
-# export DEEPEVAL_RESULTS_FOLDER="./data"
+export DEEPEVAL_RESULTS_FOLDER="./data"
 
 # # -----------------------------
 # # Start Jupyter Notebook for Colab Local Runtime
 # # -----------------------------
-# if [[ $- == *i* ]]; then
-#   if jupyter notebook list 2>&1 | grep -q 'http'; then
-#     echo "Jupyter server already up:"
-#     jupyter notebook list
-#   else
-#     echo "Starting Jupyter Notebook..."
-#     echo "--------------------------"
-#     echo
-#     jupyter notebook \
-#       --NotebookApp.allow_origin='https://colab.research.google.com' \
-#       --port=8888 \
-#       --NotebookApp.port_retries=0 \
-#       --no-browser &>/dev/null &
-#   fi
-# fi
+if [[ $- == *i* ]]; then
+  if jupyter notebook list 2>&1 | grep -q 'http'; then
+    echo "Jupyter server already up:"
+    jupyter notebook list
+  else
+    cat << 'EOF'
+echo "Starting Jupyter Notebook..."
+echo "--------------------------"
+echo
+jupyter notebook \
+  --NotebookApp.allow_origin='https://colab.research.google.com' \
+  --port=8888 \
+  --NotebookApp.port_retries=0 \
+  --no-browser &>/dev/null &
+EOF
+  fi
+fi
