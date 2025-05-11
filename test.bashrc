@@ -10,6 +10,7 @@
 echo "LOGGING: updating the system"
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install -y git wget unzip tmux curl
+sudo apt install python3-pip
 
 # -----------------------------
 # Install uv if not already installed
@@ -51,9 +52,12 @@ fi
 # -----------------------------
 # Additional Python Packages for HF + Colab Local Runtime
 # -----------------------------
-uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-uv pip install transformers datasets accelerate evaluate
-uv pip install jupyterlab ipywidgets jupyter_http_over_ws
+# uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+uv pip install jupyter_http_over_ws
+
+
+/home/ubuntu/foundry-gpu-mount/random_env/bin/python3 -m ensurepip --upgrade
+/home/ubuntu/foundry-gpu-mount/random_env/bin/python3 -m pip install --upgrade pip
 
 # # -----------------------------
 # # Enable Jupyter extension for Colab
