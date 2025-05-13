@@ -1,11 +1,28 @@
-torch==2.4.0
+# torch==2.4.0
+# transformers==4.45.2
+# datasets==2.14.6
+# deepspeed==0.15.0
+# flash-attn==2.6.3
+# accelerate
+# vllm
+# sentence-transformers==3.0.1
+# nltk
+# fraction
+# sacrebleu
+
+# Use the PyTorch CUDA 12.1 wheel channel first
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+# core
+torch==2.4.0+cu121          # GPU build; change cu121→cu118/cu124 if needed
+
+# libraries
 transformers==4.45.2
 datasets==2.14.6
 deepspeed==0.15.0
 flash-attn==2.6.3
-accelerate
-vllm==2.6.1
+accelerate==1.6.0
+vllm==0.6.3.post1 
 sentence-transformers==3.0.1
-nltk
-fraction
-sacrebleu
+nltk==3.8.1
+sacrebleu==2.4.0
