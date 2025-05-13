@@ -6,7 +6,7 @@ eval "$(/home/ubuntu/miniconda3/bin/conda shell.bash hook)"
 conda --version
 conda create -n gem python=3.10
 
-conda deactivate
+# conda deactivate
 conda activate gem
 
 pip install --no-cache-dir \
