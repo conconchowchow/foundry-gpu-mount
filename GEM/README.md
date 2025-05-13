@@ -1,3 +1,5 @@
+NOTE: TAKEN FROM https://github.com/liziniu/GEM#
+
 # 🚀 PyTorch Implementation of GEM 🌟
 
 Welcome to the official PyTorch implementation of **GEM**! 🎉
