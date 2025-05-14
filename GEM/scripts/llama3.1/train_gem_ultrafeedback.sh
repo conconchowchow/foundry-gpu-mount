@@ -3,8 +3,8 @@
 set -e 
 set -x
 
-export HF_DATASETS_OFFLINE=1
-export TRANSFORMERS_OFFLINE=1
+export HF_DATASETS_OFFLINE=0
+export TRANSFORMERS_OFFLINE=0
 export FLASH_ATTENTION_DETERMINISTIC="1"
 
 TRAIN_TOKENIZED_FILE="./data/ultrafeedback_sft_train_llama3.1_tokenized.jsonl"

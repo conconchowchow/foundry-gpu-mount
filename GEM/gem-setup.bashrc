@@ -18,3 +18,5 @@ pip install flash-attn==2.7.4.post1 --no-build-isolation
 sudo apt install build-essential ninja-build git
 
 pip install -r requirements.txt
+
+# pip install llama-stack
