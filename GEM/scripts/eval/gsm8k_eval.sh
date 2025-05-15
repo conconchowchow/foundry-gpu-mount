@@ -8,14 +8,14 @@ export TRANSFORMERS_OFFLINE=1
 export CUDA_VISIBLE_DEVICES="0"
 
 DATA_PATH="gsm8k"
-MODEL_PATH="model-path"
+MODEL_PATH="GEM/log/sft_ce-llama3.1-8b-ultrafeedback-2025-05-14-17-49-50-1234"
 TOKENIZER_PATH="meta-llama/Meta-Llama-3-8B-Instruct"
 
 T=0.0
 K=-1
 P=1.0
 
-python analysis/evaluation/evaluation_gsm8k.py \
+python evaluation/evaluation_gsm8k.py \
     --model_name_or_path $MODEL_PATH \
     --tokenizer_name_or_path $TOKENIZER_PATH \
     --dataset_name_or_path $DATA_PATH \

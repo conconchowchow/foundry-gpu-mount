@@ -5,7 +5,7 @@ import json
 from dataclasses import dataclass, field
 from pprint import pprint
 from tqdm import tqdm
-from fraction import Fraction
+# from fractions import Fraction
 
 import torch
 import numpy as np
