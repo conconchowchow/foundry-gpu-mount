@@ -3,14 +3,17 @@
 set -e 
 set -x
 
-export HF_DATASETS_OFFLINE=1
-export TRANSFORMERS_OFFLINE=1
+export HF_DATASETS_OFFLINE=0
+export TRANSFORMERS_OFFLINE=0
 export CUDA_VISIBLE_DEVICES="0"
 
 DATA_PATH="gsm8k"
 MODEL_PATH="./log/sft_ce-llama3.1-8b-ultrafeedback-2025-05-14-17-49-50-1234"
 # MODEL_PATH="./log/sft_gem-llama3.1-8b-ultrafeedback-2025-05-14-02-42-20-1234"
 TOKENIZER_PATH="meta-llama/Meta-Llama-3-8B-Instruct"
+
+export PYTHONPATH="${PYTHONPATH}:$(pwd)"
+
 
 T=0.0
 K=-1
